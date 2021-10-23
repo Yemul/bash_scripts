@@ -1,0 +1,11 @@
+#!/bin/sh
+
+message=$1 # First parameter will be the commit message
+
+if [ ! -z "$1" ] # checking if the commit message is present. If not then aborting.
+then
+  git add .
+  git commit -m "$message"
+else
+  echo "Commit message is not provided."
+fi
