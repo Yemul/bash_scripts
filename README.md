@@ -1,7 +1,7 @@
 # Utility Bash Scripts
 This repository contains some of the useful bash scripts I use in my daily workflow.
 
-# My Usage
+## My Usage
 - Clone this directory to some custom path.
 - I want to use a path in my `~` directory so I create a symbolic link to the custom path:
     `ln -s custompath/bin ~/bin`
