@@ -9,5 +9,5 @@ then
   git add .
   git commit -m "$message"
 else
-  echo "Commit message is not provided."
+  echo "Commit message is not provided. Command aborted."
 fi
