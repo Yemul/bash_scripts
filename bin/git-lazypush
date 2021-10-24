@@ -11,8 +11,10 @@ then
   if [ noRemoteBranch ]
   then
     git push --set-upstream origin $currentBranch
+    echo "Setting remote branch and pushing."
   else
     git push origin $currentBranch
+    echo "Pushing to remote branch."
   fi
 else
   echo "Commit message is not provided."
