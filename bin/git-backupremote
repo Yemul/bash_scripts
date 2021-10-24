@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# This script checkouts a backup branch that matches the current remote branch and stops
+# the new branch from tracking the remote branch.
+
+backup_branch_name=$1 # First parameter will be the backup branch name.
+currentBranch=$(git symbolic-ref --short -q HEAD) # Getting the current branch name.
+
+if [ ! -z "$1" ] # checking if the backup branch name is given. If not then aborting.
+then
+  git checkout -b $backup_branch_name origin/$currentBranch
+  git branch --unset-upstream
+  echo "Created backup branch $backup_branch_name and stopped it from tracking the remote branch."
+  git checkout $currentBranch
+  echo "We are back on $currentBranch."
+else
+  echo "Back up branch name not provided. Command aborted."
+fi
