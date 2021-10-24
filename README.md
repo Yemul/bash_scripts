@@ -9,3 +9,8 @@ This repository contains some of the useful bash scripts I use in my daily workf
     `export PATH=$PATH:~/bin`.
 - Run `source ~/.zshrc` in my currently open terminal.
 - Try a script out in the terminal - say run `git lazycommit "Added some scripts."`.
+
+
+## Adding a New Script
+- Add the script in `./bin`.
+- Run `chmod +x script-name`.
