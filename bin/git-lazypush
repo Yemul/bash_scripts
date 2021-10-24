@@ -2,13 +2,13 @@
 
 message=$1 # First parameter will be the commit message
 currentBranch=$(git symbolic-ref --short -q HEAD) # Getting the current branch
-hasRemoteBranch="git ls-remote --heads --exit-code origin \"$(git symbolic-ref --short HEAD)\"" == 2
+noRemoteBranch=$(git ls-remote --heads --exit-code origin "$(git symbolic-ref --short HEAD)") -eq 2
 
 if [ ! -z "$1" ] # checking if the commit message is present. If not then aborting.
 then
   git add .
   git commit -m "$message"
-  if [ hasRemoteBranch ]
+  if [ noRemoteBranch ]
   then
     git push --set-upstream origin $currentBranch
   else
