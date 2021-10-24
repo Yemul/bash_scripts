@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Inspired by https://gitbetter.substack.com/p/automate-repetitive-tasks-with-custom.
+
 message=$1 # First parameter will be the commit message
 currentBranch=$(git symbolic-ref --short -q HEAD) # Getting the current branch
 

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Inspired by https://gitbetter.substack.com/p/automate-repetitive-tasks-with-custom.
+
 message=$1 # First parameter will be the commit message
 
 if [ ! -z "$1" ] # checking if the commit message is present. If not then aborting.
