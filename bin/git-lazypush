@@ -2,15 +2,13 @@
 
 # Inspired by https://gitbetter.substack.com/p/automate-repetitive-tasks-with-custom.
 
-message=$1 # First parameter will be the commit message
+message=$1                                        # First parameter will be the commit message
 currentBranch=$(git symbolic-ref --short -q HEAD) # Getting the current branch
 
-if [ ! -z "$1" ] # checking if the commit message is present. If not then aborting.
-then
+if [ ! -z "$1" ]; then # checking if the commit message is present. If not then aborting.
   git add .
   git commit -m "$message"
-  if [[ $(git branch -r | grep -w $currentBranch) ]]
-  then
+  if [[ $(git branch -r | grep -w $currentBranch) ]]; then
     git push origin $currentBranch
     echo "Pushed to remote branch."
   else
